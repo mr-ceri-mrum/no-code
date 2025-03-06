@@ -24,7 +24,9 @@ npm install
 ```
 
 3. Start the development server (easiest method)
-```
+
+**On macOS/Linux:**
+```bash
 # Make the start script executable
 chmod +x start.sh
 
@@ -33,17 +35,30 @@ chmod +x start.sh
 ./start.sh
 ```
 
+**On Windows:**
+```cmd
+# Simply run the batch file
+start.bat
+```
+
 4. Open your browser to `http://localhost:3000`
 
 ## Running with Node.js v22
 
 If you're using Node.js v22, you may need to follow these special instructions to get the project running correctly:
 
-### Option 1 (Recommended): Use the start script
-The easiest way is to use our start script which automatically detects your Node.js version:
+### Option 1 (Recommended): Use the startup scripts
+The easiest way is to use our startup scripts which automatically detect your Node.js version:
+
+**For macOS/Linux:**
 ```bash
 chmod +x start.sh
 ./start.sh
+```
+
+**For Windows:**
+```cmd
+start.bat
 ```
 
 ### Option 2: Use an earlier version of Node.js
