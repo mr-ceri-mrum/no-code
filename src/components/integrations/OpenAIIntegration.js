@@ -27,6 +27,7 @@ import {
   Info as InfoIcon,
   SettingsBackupRestore as ResetIcon
 } from '@mui/icons-material';
+import openaiService from '../../services/openaiService';
 
 function OpenAIIntegration() {
   const [apiKey, setApiKey] = useState('');
@@ -92,15 +93,14 @@ function OpenAIIntegration() {
     setSuccessMessage('');
 
     try {
-      // Simulate API call to OpenAI to validate the API key
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Use our browser-compatible OpenAI service
+      const isValid = await openaiService.validateKey(apiKey, orgId);
       
-      // In a real implementation, you would make an actual API call to OpenAI
-      // to validate the key, like listing available models
-      
-      setIsConnected(true);
-      setSuccessMessage('Successfully connected to OpenAI API!');
-      saveSettings(true);
+      if (isValid) {
+        setIsConnected(true);
+        setSuccessMessage('Successfully connected to OpenAI API!');
+        saveSettings(true);
+      }
     } catch (error) {
       setErrorMessage('Failed to connect to OpenAI API. Please check your API key.');
     } finally {
