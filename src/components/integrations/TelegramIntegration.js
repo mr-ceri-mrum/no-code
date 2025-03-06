@@ -40,6 +40,7 @@ import {
   Save as SaveIcon,
   Cancel as CancelIcon
 } from '@mui/icons-material';
+import telegramService from '../../services/telegramService';
 
 function TelegramIntegration() {
   // State for bot token and bot configuration
@@ -189,15 +190,8 @@ function TelegramIntegration() {
     setErrorMessage('');
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // In a real implementation, you would make an API call to Telegram
-      // here to verify the token and get bot information
-      const botInfo = {
-        username: 'myawesomebot',
-        // Other bot info would come from Telegram API
-      };
+      // Use our browser-compatible Telegram service
+      const botInfo = await telegramService.connect(botToken);
       
       setBotUsername(botInfo.username);
       setIsConnected(true);
