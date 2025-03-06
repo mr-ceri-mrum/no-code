@@ -99,7 +99,7 @@ class OpenAIService {
     const responses = {
       'Hello': 'Hello! How can I assist you today?',
       'What is AI?': 'Artificial Intelligence (AI) refers to systems or machines that mimic human intelligence to perform tasks and can iteratively improve themselves based on the information they collect.',
-      'Tell me a joke': 'Why don't scientists trust atoms? Because they make up everything!'
+      'Tell me a joke': 'Why don\'t scientists trust atoms? Because they make up everything!'
     };
     
     // Get a default response or use one of the preset ones
