@@ -40,11 +40,15 @@ import {
 // Import custom node components
 import TelegramInputNode from '../components/nodes/TelegramInputNode';
 import TelegramOutputNode from '../components/nodes/TelegramOutputNode';
+import OpenAINode from '../components/nodes/OpenAINode';
+import ConditionNode from '../components/nodes/ConditionNode';
 
 // Node types
 const nodeTypes = {
   telegramInput: TelegramInputNode,
   telegramOutput: TelegramOutputNode,
+  openai: OpenAINode,
+  condition: ConditionNode,
 };
 
 function FlowBuilder() {
