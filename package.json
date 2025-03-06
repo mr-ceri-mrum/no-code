@@ -14,12 +14,14 @@
     "react-scripts": "5.0.1",
     "axios": "^1.6.2",
     "openai": "^4.20.1",
-    "telegraf": "^4.15.0",
     "uuid": "^9.0.1"
   },
+  "overrides": {
+    "typescript": "^5.0.0"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -40,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
